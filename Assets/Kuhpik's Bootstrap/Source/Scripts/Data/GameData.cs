@@ -9,5 +9,6 @@ namespace Kuhpik
     {
         public Transform currentGameObjectFill;
         public Transform player;
+        public bool freeHands;
     }
 }

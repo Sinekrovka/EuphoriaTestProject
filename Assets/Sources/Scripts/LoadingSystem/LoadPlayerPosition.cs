@@ -9,6 +9,7 @@ public class LoadPlayerPosition : GameSystem, IIniting
     {
         /*здесь код загрузки позиции и поворота плэйера на момент выигрыша*/
         game.player = GameObject.FindWithTag("Player").transform;
+        game.freeHands = true;
         Bootstrap.ChangeGameState(EGamestate.Menu);
     }
 }
