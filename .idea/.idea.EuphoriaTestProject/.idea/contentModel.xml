@@ -309,11 +309,15 @@
         </e>
         <e p="Sources" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Components" t="Include">
+              <e p="InteratibleObject.cs" t="Include" />
+            </e>
             <e p="FinishSystem" t="Include">
               <e p="FinishState.cs" t="Include" />
             </e>
             <e p="GameSystem" t="Include">
               <e p="CameraController.cs" t="Include" />
+              <e p="InputSystem.cs" t="Include" />
             </e>
             <e p="LoadingSystem" t="Include">
               <e p="LoadPlayerPosition.cs" t="Include" />

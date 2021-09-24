@@ -1,17 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using Kuhpik;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class CameraController : GameSystem, IUpdating
+public class CameraController : GameSystem, IIniting
 {
-    void IUpdating.OnUpdate()
+    [SerializeField] private GameObject loadingCamera;
+    [SerializeField] private GameObject playerCameras;
+
+    [SerializeField] private GameObject firstPersonCamera;
+    [SerializeField] private GameObject thirdPersonCamera;
+    
+    void IIniting.OnInit()
     {
-        if (Input.GetKeyDown("Fire1"))
-        {
-            /*Смена камеры*/
-            Debug.LogError("Смена Камеры");
-        }
+        loadingCamera.SetActive(false);
+        playerCameras.SetActive(true);
+        FindObjectOfType<InputSystem>().ChangeCameraEvent += ChangeCamera;
+    }
+
+    private void ChangeCamera(string x)
+    {
+        firstPersonCamera.SetActive(!firstPersonCamera.activeSelf);
+        thirdPersonCamera.SetActive(!thirdPersonCamera.activeSelf);
     }
 }

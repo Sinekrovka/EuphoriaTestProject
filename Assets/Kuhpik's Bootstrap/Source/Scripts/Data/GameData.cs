@@ -7,8 +7,6 @@ namespace Kuhpik
     /// </summary>
     public class GameData
     {
-        // Example (I use public fields for data, but u free to use properties\methods etc)
-        // public float LevelProgress;
-        // public Enemy[] Enemies;
+        public Transform currentGameObjectFill;
     }
 }
