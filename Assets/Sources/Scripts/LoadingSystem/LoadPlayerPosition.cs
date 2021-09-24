@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Kuhpik;
 using UnityEngine;
 
-public class LoadPlayerPosition : MonoBehaviour
+public class LoadPlayerPosition : GameSystem, IIniting
 {
-    // Start is called before the first frame update
-    void Start()
+    void IIniting.OnInit()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        /*здесь код загрузки позиции и поворота плэйера на момент выигрыша*/
+        Bootstrap.ChangeGameState(EGamestate.Menu);
     }
 }

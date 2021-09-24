@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Kuhpik;
 using UnityEngine;
 
-public class StartController : MonoBehaviour
+public class StartController : GameSystem, IUpdating
 {
-    // Start is called before the first frame update
-    void Start()
+    void IUpdating.OnUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.anyKey)
+        {
+            Bootstrap.ChangeGameState(EGamestate.Game);
+        }
     }
 }

@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Kuhpik;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : GameSystem, IUpdating
 {
-    // Start is called before the first frame update
-    void Start()
+    void IUpdating.OnUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKeyDown("Fire1"))
+        {
+            /*Смена камеры*/
+            Debug.LogError("Смена Камеры");
+        }
     }
 }

@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Kuhpik;
 using UnityEngine;
 
-public class FinishState : MonoBehaviour
+public class FinishState : GameSystem, IIniting
 {
-    // Start is called before the first frame update
-    void Start()
+    void IIniting.OnInit()
     {
-        
+        /*Сохраняем позицию плэйера*/
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ButtonRestart()
     {
-        
+        Bootstrap.GameRestart(0);
     }
 }
