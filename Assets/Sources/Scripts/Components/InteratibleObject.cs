@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using Kuhpik;
+using System;
 using UnityEngine;
 
-public class InteratibleObject : GameSystem
+public class InteratibleObject : MonoBehaviour
 {
+    public Action<Transform> checkNewObject;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("InteractableObject"))
         {
             /*Здесь вызываем UI*/
-            game.currentGameObjectFill = transform;
+            checkNewObject?.Invoke(other.transform);
         }
     }
 }

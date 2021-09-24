@@ -12,6 +12,12 @@ public class InteractibleObjectSystem : GameSystem, IIniting
     void IIniting.OnInit()
     {
         FindObjectOfType<InputSystem>().InteratibleObject += CheckingParams;
+        FindObjectOfType<InteratibleObject>().checkNewObject += CheckNewObject;
+    }
+
+    private void CheckNewObject(Transform other)
+    {
+        game.currentGameObjectFill = other;
     }
 
     private void CheckingParams(string parametr)
