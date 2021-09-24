@@ -5,14 +5,18 @@ using UnityEngine;
 
 public class InteractibleObjectSystem : GameSystem, IIniting
 {
-    [SerializeField] private Vector3 forceMove;
-    [SerializeField] private Vector3 forceFall;
+    [SerializeField] private float forceMove;
+    [SerializeField] private float forceFall;
+
+    private Vector3 playerForward;
+    private Transform placeForObject;
     
     private Rigidbody currentObjectOnHands;
     void IIniting.OnInit()
     {
         FindObjectOfType<InputSystem>().InteratibleObject += CheckingParams;
-        FindObjectOfType<InteratibleObject>().checkNewObject += CheckNewObject;
+        FindObjectOfType<InteratibleObject>().CheckNewObjectEvent += CheckNewObject;
+        placeForObject  = game.player.GetChild(0);
     }
 
     private void CheckNewObject(Transform other)
@@ -22,35 +26,44 @@ public class InteractibleObjectSystem : GameSystem, IIniting
 
     private void CheckingParams(string parametr)
     {
-        if (parametr.Contains("Raise"))
+        if (currentObjectOnHands != null)
         {
-            RaiseObject();
-        }
-        else
-        {
-            FallObject(forceMove);
+            if (parametr.Contains("Raise"))
+            {
+                RaiseObject();
+            }
+            else
+            {
+                FallObject(forceMove);
+                if (currentObjectOnHands.transform.Equals(game.currentGameObjectFill))
+                {
+                    game.currentGameObjectFill = null;
+                }
+                currentObjectOnHands = new Rigidbody();
+            }
         }
     }
 
     private void RaiseObject()
     {
-        Transform placeForObject = game.player.GetChild(0);
         if (placeForObject.childCount > 0)
         {
             FallObject(forceFall);
         }
         
         currentObjectOnHands = game.currentGameObjectFill.GetComponent<Rigidbody>();
-        game.currentGameObjectFill.GetComponent<Collider>().enabled = false;
         currentObjectOnHands.isKinematic = true;
+        game.currentGameObjectFill.GetComponent<Collider>().enabled = false;
         game.currentGameObjectFill.position = placeForObject.transform.position;
-        game.currentGameObjectFill.SetParent(placeForObject);
+        game.currentGameObjectFill.transform.SetParent(placeForObject);
     }
 
-    private void FallObject(Vector3 force)
+    private void FallObject(float force)
     {
+        playerForward = game.player.parent.forward;
         currentObjectOnHands.isKinematic = false;
         currentObjectOnHands.transform.GetComponent<Collider>().enabled = true;
-        currentObjectOnHands.AddForce(force);
+        currentObjectOnHands.transform.SetParent(null);
+        currentObjectOnHands.AddForce(playerForward * force);
     }
 }

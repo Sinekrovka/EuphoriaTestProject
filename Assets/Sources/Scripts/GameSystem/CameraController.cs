@@ -9,6 +9,8 @@ public class CameraController : GameSystem, IIniting
     void IIniting.OnInit()
     {
         firstPersonCamera.SetActive(true);
+        firstPersonCamera.GetComponent<Camera>().fieldOfView = 65;
+        game.fpc.enabled = true;
         FindObjectOfType<InputSystem>().ChangeCameraEvent += ChangeCamera;
     }
 
