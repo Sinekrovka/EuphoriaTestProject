@@ -4,7 +4,6 @@ using UnityEngine;
 public class CameraController : GameSystem, IIniting
 {
     [SerializeField] private GameObject loadingCamera;
-    [SerializeField] private GameObject playerCameras;
 
     [SerializeField] private GameObject firstPersonCamera;
     [SerializeField] private GameObject thirdPersonCamera;
@@ -12,7 +11,7 @@ public class CameraController : GameSystem, IIniting
     void IIniting.OnInit()
     {
         loadingCamera.SetActive(false);
-        playerCameras.SetActive(true);
+        firstPersonCamera.SetActive(true);
         FindObjectOfType<InputSystem>().ChangeCameraEvent += ChangeCamera;
     }
 

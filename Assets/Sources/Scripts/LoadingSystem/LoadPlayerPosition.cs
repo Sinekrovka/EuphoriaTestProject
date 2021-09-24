@@ -8,6 +8,7 @@ public class LoadPlayerPosition : GameSystem, IIniting
     void IIniting.OnInit()
     {
         /*здесь код загрузки позиции и поворота плэйера на момент выигрыша*/
+        game.player = GameObject.FindWithTag("Player").transform;
         Bootstrap.ChangeGameState(EGamestate.Menu);
     }
 }

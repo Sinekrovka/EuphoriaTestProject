@@ -8,5 +8,6 @@ namespace Kuhpik
     public class GameData
     {
         public Transform currentGameObjectFill;
+        public Transform player;
     }
 }
