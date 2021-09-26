@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f573a5f-8877-4e20-ada1-f1360c7b9dc9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Sources/Scripts/StartSystem/StartController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sources/Scripts/StartSystem/StartController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EuphoriaTestProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EuphoriaTestProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe11.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe11.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe15.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe15.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe8.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe8.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Sources/Scripts/StartSystem/StartController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <marker date="1632677669898" expanded="true" signature="6:53" ph="..." />
                 <marker date="1632677669898" expanded="true" signature="99:218" ph="{...}" />
@@ -402,12 +405,12 @@
       <option name="presentableId" value="Default" />
       <updated>1632470905163</updated>
       <workItem from="1632470919660" duration="11040000" />
-      <workItem from="1632590813983" duration="12590000" />
+      <workItem from="1632590813983" duration="13190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23630000" />
+    <option name="totallyTimeSpent" value="24230000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -722,7 +725,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Sources/Scripts/StartSystem/StartController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <marker date="1632677669898" expanded="true" signature="6:53" ph="..." />
             <marker date="1632677669898" expanded="true" signature="99:218" ph="{...}" />
