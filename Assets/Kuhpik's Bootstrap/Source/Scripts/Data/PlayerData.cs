@@ -9,8 +9,12 @@ namespace Kuhpik
     [Serializable]
     public class PlayerData
     {
-        // Example (I use public fields for data, but u free to use properties\methods etc)
-        // [BoxGroup("level")] public int level;
-        // [BoxGroup("currency")] public int money;
+        public float PosX;
+        public float PosY;
+        public float PosZ;
+
+        public float AngleX;
+        public float AngleY;
+        public float AngleZ;
     }
 }

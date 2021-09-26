@@ -16,7 +16,7 @@ public class CameraController : GameSystem, IIniting
 
     private void ChangeCamera(string x)
     {
-        firstPersonCamera.SetActive(!firstPersonCamera.activeSelf);
-        thirdPersonCamera.SetActive(!thirdPersonCamera.activeSelf);
+       /* firstPersonCamera.SetActive(!firstPersonCamera.activeSelf);
+        thirdPersonCamera.SetActive(!thirdPersonCamera.activeSelf);*/
     }
 }

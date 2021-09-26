@@ -16,7 +16,16 @@ public class InteractibleObjectSystem : GameSystem, IIniting
     {
         FindObjectOfType<InputSystem>().InteratibleObject += CheckingParams;
         FindObjectOfType<InteratibleObject>().CheckNewObjectEvent += CheckNewObject;
+        FindObjectOfType<InteratibleObject>().removeObjectEvent += RemoveObject;
         placeForObject  = game.player.GetChild(0);
+    }
+
+    private void RemoveObject(Transform other)
+    {
+        if (game.currentGameObjectFill.Equals(other))
+        {
+            game.currentGameObjectFill = null;
+        }
     }
 
     private void CheckNewObject(Transform other)
@@ -26,13 +35,16 @@ public class InteractibleObjectSystem : GameSystem, IIniting
 
     private void CheckingParams(string parametr)
     {
-        if (currentObjectOnHands != null)
+        if (parametr.Contains("Raise"))
         {
-            if (parametr.Contains("Raise"))
+            if (game.currentGameObjectFill != null)
             {
                 RaiseObject();
             }
-            else
+        }
+        else
+        {
+            if (currentObjectOnHands != null)
             {
                 FallObject(forceMove);
                 if (currentObjectOnHands.transform.Equals(game.currentGameObjectFill))
@@ -61,9 +73,10 @@ public class InteractibleObjectSystem : GameSystem, IIniting
     private void FallObject(float force)
     {
         playerForward = game.player.parent.forward;
+        currentObjectOnHands.transform.SetParent(null);
         currentObjectOnHands.isKinematic = false;
         currentObjectOnHands.transform.GetComponent<Collider>().enabled = true;
-        currentObjectOnHands.transform.SetParent(null);
         currentObjectOnHands.AddForce(playerForward * force);
+        
     }
 }
