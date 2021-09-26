@@ -19,6 +19,6 @@ public class FinishState : GameSystem, IIniting
 
     public void ButtonRestart()
     {
-        Bootstrap.GameRestart(0);
+        Bootstrap.GameRestart(1);
     }
 }

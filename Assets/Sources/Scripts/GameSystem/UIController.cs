@@ -41,7 +41,7 @@ public class UIController : GameSystem, IIniting
         if (game.currentCountCapsule == game.countCapsule && game.countCube == game.currentCountCube &&
             game.currentCountSphere == game.countSphere)
         {
-            Bootstrap.GameRestart(1);
+            Bootstrap.ChangeGameState(EGamestate.Result);
         }
     }
 }
