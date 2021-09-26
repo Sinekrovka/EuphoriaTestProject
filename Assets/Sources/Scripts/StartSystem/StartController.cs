@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Kuhpik;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class StartController : GameSystem, IUpdating
+public class StartController : MonoBehaviour
 {
-    void IUpdating.OnUpdate()
+    void Update()
     {
         if (Input.anyKey)
         {
-            Bootstrap.ChangeGameState(EGamestate.Game);
+            SceneManager.LoadScene(1);
         }
     }
 }
